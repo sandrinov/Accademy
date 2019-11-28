@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace Accademy.Data
 {
-    public class AccademyEntityFramework
+    public class AccademyEntityFramework : IAccademyData
     {
         private NorthwindEntities ctx;
         private EmployeeFactory emp_factory;

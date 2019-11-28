@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Accademy.Data
 {
-    public class AccademyADODB
+    public class AccademyADODB : IAccademyData
     {
         private String connString = "";
         private SqlConnection conn;
