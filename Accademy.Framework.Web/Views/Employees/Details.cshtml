@@ -1,0 +1,51 @@
+﻿@model Accademy.Models.AccademyEmployee
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Accademy Employee</h4>
+    <br />
+    <a href="/Employees/Orders/@Model.IDAccademyEmployee" class="btn btn-info" role="button">All Orders</a>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.IDAccademyEmployee)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.IDAccademyEmployee)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Nome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Nome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Cognome)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Cognome)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Citta)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Citta)
+        </dd>
+
+    </dl>
+</div>
+<p>
+        @Html.ActionLink("Back to List", "Index")
+</p>

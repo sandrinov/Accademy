@@ -30,11 +30,48 @@ namespace Accademy.Data
         }
         public AccademyEmployee GetEmployeeByID(int EmployeeID)
         {
-            return null;
+            AccademyEmployee result = new AccademyEmployee();
+            var entity = ctx.Employees
+                         .Where(e => e.EmployeeID == EmployeeID)
+                         .FirstOrDefault();
+
+            result = emp_factory.CreateDto(entity);
+            return result;
         }
         public List<AccademyOrder> GetAllOrdersByIDEmployee(int EmployeeID)
         {
-            return null;
+            List<AccademyOrder> resultList = new List<AccademyOrder>();
+            var result = from e in ctx.Employees
+                         join o in ctx.Orders on e.EmployeeID equals o.EmployeeID
+                         where e.EmployeeID == EmployeeID
+                         select o.Order_Details;
+
+            foreach (var details in result.ToList())
+            {
+                double amount = 0;
+                int orderID = 0;
+                DateTime orderDate = DateTime.Now;
+
+                foreach (var detail in details)
+                {
+                    orderID = detail.OrderID;
+                    orderDate = detail.Order.OrderDate.HasValue? detail.Order.OrderDate.Value : DateTime.Now;
+
+                    short qta = detail.Quantity;
+                    decimal up = detail.UnitPrice;
+                    double tot = (double)(qta * up);                   
+                    double discount = tot * detail.Discount;
+                    amount += tot - discount;
+                }
+                AccademyOrder tmp_order = new AccademyOrder()
+                {
+                    OrderID = orderID,
+                    OrderDate = orderDate,
+                    OrderAmount = Math.Round(amount, 2)
+                };
+                resultList.Add(tmp_order);
+            }
+            return resultList;
         }
     }
 }

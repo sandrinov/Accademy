@@ -20,5 +20,15 @@ namespace Accademy.Framework.Web.Controllers
             var vm = db.GetAllEmployees();
             return View(vm);
         }
+        public ActionResult Details(int id)
+        {
+            var vm = db.GetEmployeeByID(id);
+            return View(vm);
+        }
+        public ActionResult Orders(int id)
+        {
+            var vm = db.GetAllOrdersByIDEmployee(id);
+            return View(vm);
+        }
     }
 }
