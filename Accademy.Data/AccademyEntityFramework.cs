@@ -1,4 +1,5 @@
 ﻿using Accademy.Data.EF;
+using Accademy.Factories;
 using Accademy.Models;
 using System;
 using System.Collections.Generic;
@@ -15,6 +16,7 @@ namespace Accademy.Data
         public AccademyEntityFramework()
         {
             ctx = new NorthwindEntities();
+            emp_factory = new EmployeeFactory();
         }
         public List<AccademyEmployee> GetAllEmployees()
         {
@@ -22,17 +24,17 @@ namespace Accademy.Data
             var listOfEntities =  ctx.Employees.ToList();
             foreach (var entity in listOfEntities)
             {
-                resultList.
+                resultList.Add(emp_factory.CreateDto(entity));
             }
-
+            return resultList;
         }
         public AccademyEmployee GetEmployeeByID(int EmployeeID)
         {
-
+            return null;
         }
         public List<AccademyOrder> GetAllOrdersByIDEmployee(int EmployeeID)
         {
-
+            return null;
         }
     }
 }

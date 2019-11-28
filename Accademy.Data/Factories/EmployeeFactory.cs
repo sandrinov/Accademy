@@ -8,7 +8,7 @@ using Accademy.Models;
 
 namespace Accademy.Factories
 {
-    class EmployeeFactory : IFactory<Accademy.Data.EF.Employee, Accademy.Models.AccademyEmployee>
+    public class EmployeeFactory : IFactory<Accademy.Data.EF.Employee, Accademy.Models.AccademyEmployee>
     {
         public AccademyEmployee CreateDto(Employee entity)
         {
