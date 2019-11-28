@@ -12,5 +12,6 @@ namespace Accademy.Data
         List<AccademyEmployee> GetAllEmployees();
         AccademyEmployee GetEmployeeByID(int EmployeeID);
         List<AccademyOrder> GetAllOrdersByIDEmployee(int EmployeeID);
+        List<AccademyOrderDetail> GetOrderDetailsByID(int OrderID);
     }
 }

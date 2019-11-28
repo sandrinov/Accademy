@@ -73,5 +73,30 @@ namespace Accademy.Data
             }
             return resultList;
         }
+        public List<AccademyOrderDetail> GetOrderDetailsByID(int OrderID)
+        {
+            List<AccademyOrderDetail> resultList = new List<AccademyOrderDetail>();
+
+            var res = ctx.Order_Details.Where(od => od.OrderID == OrderID);
+
+            foreach (var od in res.ToList())
+            {
+                double tot = od.Quantity * (double)od.UnitPrice;
+                double discount = (od.Quantity * (double)od.UnitPrice) * od.Discount;
+                AccademyOrderDetail aod = new AccademyOrderDetail()
+                {
+                    ProductName = od.Product.ProductName,
+                    Quantity = od.Quantity,
+                    UnityPrice = (double)od.UnitPrice,
+                    Discount = Math.Round(discount, 2),
+                    Amount = Math.Round(tot - discount, 2)
+                };
+                resultList.Add(aod);
+            }
+
+
+            return resultList;
+        }
+
     }
 }

@@ -66,6 +66,11 @@ namespace Accademy.Data
             return result;
         }
 
+        public List<AccademyOrderDetail> GetOrderDetailsByID(int OrderID)
+        {
+            return null;
+        }
+
         public List<AccademyOrder> GetAllOrdersByIDEmployee(int EmployeeID)
         {
             List<AccademyOrder> resultList = new List<AccademyOrder>();
