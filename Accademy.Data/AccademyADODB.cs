@@ -73,7 +73,6 @@ namespace Accademy.Data
                               "FROM Orders INNER JOIN Employees ON Orders.EmployeeID = Employees.EmployeeID INNER JOIN " +
                               "[Order Details] ON Orders.OrderID = [Order Details].OrderID " +
                               "WHERE(Employees.EmployeeID = " + EmployeeID +  ")" ;
-
             conn.Open();
             SqlDataReader dr = cmd.ExecuteReader();
             int tmpID = -1;
@@ -84,8 +83,6 @@ namespace Accademy.Data
             {
                 tmpID = (int)dr["OrderID"];
             }
-            
-
             while (!fine)
             {
                 double amount = 0;
@@ -103,7 +100,7 @@ namespace Accademy.Data
                 {
                     OrderID = tmpID,
                     OrderDate = orderDate,
-                    OrderAmount = amount
+                    OrderAmount = Math.Round(amount, 2) 
                 };
                 resultList.Add(tmp_order);
                 if (!fine)

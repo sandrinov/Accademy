@@ -11,6 +11,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accademy.Data", "Accademy.D
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accademy.Models", "Accademy.Models\Accademy.Models.csproj", "{A5D652FD-3DED-4222-BF97-BAD889401EFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Accademy.Factories", "Accademy.Factories\Accademy.Factories.csproj", "{AFFEE55B-5ED8-4155-B8D3-F2958E0968F0}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +35,10 @@ Global
 		{A5D652FD-3DED-4222-BF97-BAD889401EFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{A5D652FD-3DED-4222-BF97-BAD889401EFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{A5D652FD-3DED-4222-BF97-BAD889401EFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{AFFEE55B-5ED8-4155-B8D3-F2958E0968F0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AFFEE55B-5ED8-4155-B8D3-F2958E0968F0}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AFFEE55B-5ED8-4155-B8D3-F2958E0968F0}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AFFEE55B-5ED8-4155-B8D3-F2958E0968F0}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
