@@ -11,13 +11,20 @@ namespace Accademy.Data
     public class AccademyEntityFramework
     {
         private NorthwindEntities ctx;
+        private EmployeeFactory emp_factory;
         public AccademyEntityFramework()
         {
             ctx = new NorthwindEntities();
         }
         public List<AccademyEmployee> GetAllEmployees()
         {
-            return ctx.Employees.ToList();
+            List<AccademyEmployee> resultList = new List<AccademyEmployee>();
+            var listOfEntities =  ctx.Employees.ToList();
+            foreach (var entity in listOfEntities)
+            {
+                resultList.
+            }
+
         }
         public AccademyEmployee GetEmployeeByID(int EmployeeID)
         {

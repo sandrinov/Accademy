@@ -46,10 +46,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Accademy.Data\Accademy.Data.csproj">
-      <Project>{74b6be56-135a-4d35-95a1-60657891dd12}</Project>
-      <Name>Accademy.Data</Name>
-    </ProjectReference>
     <ProjectReference Include="..\Accademy.Models\Accademy.Models.csproj">
       <Project>{a5d652fd-3ded-4222-bf97-bad889401efd}</Project>
       <Name>Accademy.Models</Name>
