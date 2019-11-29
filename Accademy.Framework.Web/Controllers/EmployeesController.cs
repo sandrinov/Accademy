@@ -10,9 +10,10 @@ namespace Accademy.Framework.Web.Controllers
     public class EmployeesController : Controller
     {
         private IAccademyData db;
-        public EmployeesController()
+        public EmployeesController(IAccademyData _db)
         {
-            db = new AccademyEntityFramework();
+            db = _db;
+            //db = new AccademyEntityFramework();
         }
         // GET: Employees
         public ActionResult Index()

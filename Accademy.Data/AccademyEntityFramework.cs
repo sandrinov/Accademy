@@ -93,8 +93,6 @@ namespace Accademy.Data
                 };
                 resultList.Add(aod);
             }
-
-
             return resultList;
         }
 
